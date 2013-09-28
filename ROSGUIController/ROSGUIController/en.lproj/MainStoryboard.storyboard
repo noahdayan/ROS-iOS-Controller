@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ROSViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="ufM-Yr-Zqz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="ROSGUIController" id="z8z-oc-29K">
+                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="wOD-Z1-cvc">
+                                            <connections>
+                                                <action selector="editAction:" destination="2" id="eUo-24-EQz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HNa-Ar-Frb">
+                                            <connections>
+                                                <segue destination="vgp-Ah-k9U" kind="modal" id="egK-X6-xwU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f5X-Il-h19">
+                                <rect key="frame" x="20" y="57" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Disconnected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SBJ-NO-FyL">
+                                <rect key="frame" x="97" y="57" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WebSocket" minimumFontSize="17" id="8oL-2V-A1z">
+                                <rect key="frame" x="97" y="86" width="115" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="S4a-Zy-D1W"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xqh-A5-RGL">
+                                <rect key="frame" x="220" y="85" width="85" height="31"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectAction:" destination="2" eventType="touchUpInside" id="T7n-zu-8nj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BVo-dZ-8eM">
+                                <rect key="frame" x="20" y="90" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Controls:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Gl-0D-Mqd">
+                                <rect key="frame" x="20" y="130" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressField" destination="8oL-2V-A1z" id="amA-CT-2qp"/>
+                        <outlet property="connectButton" destination="xqh-A5-RGL" id="MbB-bG-OuH"/>
+                        <outlet property="editButton" destination="wOD-Z1-cvc" id="a5E-gT-zh3"/>
+                        <outlet property="statusLabel" destination="SBJ-NO-FyL" id="6Jq-Mg-h1Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="24"/>
+        </scene>
+        <!--Add Control View Controller-->
+        <scene sceneID="5LW-H0-Fvw">
+            <objects>
+                <viewController id="vgp-Ah-k9U" userLabel="Add Control View Controller" customClass="ROSAddControlViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zpa-hZ-Pei">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="o5E-fe-q9m">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Add Control" id="e7D-0k-ulw">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mcY-lh-JbD">
+                                            <connections>
+                                                <segue destination="SCN-np-FGO" kind="unwind" identifier="CancelInput" unwindAction="cancel:" id="Fz6-3K-spg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MwB-p6-dte">
+                                            <connections>
+                                                <segue destination="SCN-np-FGO" kind="unwind" identifier="ReturnInput" unwindAction="done:" id="GfO-jq-CXi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BzL-hj-7YF">
+                                <rect key="frame" x="20" y="58" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4e9-pp-Xh9">
+                                <rect key="frame" x="103" y="55" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vgp-Ah-k9U" id="a69-cn-nEc"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="pzT-Am-h2y">
+                                <rect key="frame" x="103" y="93" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vgp-Ah-k9U" id="8D7-DX-tn0"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Op:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u7U-WV-GgS">
+                                <rect key="frame" x="20" y="97" width="28" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="fdb-jN-d3E">
+                                <rect key="frame" x="103" y="131" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vgp-Ah-k9U" id="A6Q-4G-Fzc"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Topic:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hyk-M0-tUq">
+                                <rect key="frame" x="20" y="134" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Msg:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WYz-8c-dOq">
+                                <rect key="frame" x="20" y="172" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lsW-Sc-W9V">
+                                <rect key="frame" x="114" y="247" width="93" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Field">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFieldAction:" destination="vgp-Ah-k9U" eventType="touchUpInside" id="QiR-OL-PWp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="lbd-YC-k9A">
+                                <rect key="frame" x="20" y="200" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vgp-Ah-k9U" id="7jZ-MN-i4r"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="udZ-L2-rKd">
+                                <rect key="frame" x="170" y="200" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vgp-Ah-k9U" id="M0n-8o-b5o"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addFieldButton" destination="lsW-Sc-W9V" id="Kw0-My-NRK"/>
+                        <outlet property="keyControlField" destination="lbd-YC-k9A" id="sq9-VR-xHr"/>
+                        <outlet property="opControlField" destination="pzT-Am-h2y" id="U3v-Qv-s3u"/>
+                        <outlet property="titleControlField" destination="4e9-pp-Xh9" id="CTS-La-MKC"/>
+                        <outlet property="topicControlField" destination="fdb-jN-d3E" id="6Dw-OV-Jgk"/>
+                        <outlet property="valueControlField" destination="udZ-L2-rKd" id="JdV-dw-hTA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25X-Sn-RbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SCN-np-FGO" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="24"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="ROSAddControlViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ROSAddControlViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addFieldAction:"/>
+                <relationship kind="outlet" name="addFieldButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyControlField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="opControlField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleControlField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="topicControlField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valueControlField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ROSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ROSViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="connectAction:"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="editAction:"/>
+                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="connectButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
